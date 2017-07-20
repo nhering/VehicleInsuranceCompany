@@ -58,6 +58,35 @@
             @Html.DisplayFor(model => model.ZipCode)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicles)
+        </dt>
+
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Make</th>
+                    <th>Model</th>
+                    <th>Year</th>
+                </tr>
+                @if (Model.Vehicles != null)
+                {
+                    foreach (var item in Model.Vehicles)
+                    {
+                    <tr>
+                        @Html.DisplayFor(Model => item.Make)
+                    </tr>
+                    <tr>
+                        @Html.DisplayFor(Model => item.Model)
+                    </tr>
+                    <tr>
+                        @Html.DisplayFor(Model => item.Year)
+                    </tr>
+                    }
+                }
+            </table>
+        </dd>
+
     </dl>
 </div>
 <p>
