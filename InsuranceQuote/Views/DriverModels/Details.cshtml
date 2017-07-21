@@ -73,15 +73,48 @@
                 {
                     foreach (var item in Model.Vehicles)
                     {
-                    <tr>
-                        @Html.DisplayFor(Model => item.Make)
-                    </tr>
-                    <tr>
-                        @Html.DisplayFor(Model => item.Model)
-                    </tr>
-                    <tr>
-                        @Html.DisplayFor(Model => item.Year)
-                    </tr>
+                        <tr>
+                            @Html.DisplayFor(Model => item.Make)
+                        </tr>
+                        <tr>
+                            @Html.DisplayFor(Model => item.Model)
+                        </tr>
+                        <tr>
+                            @Html.DisplayFor(Model => item.Year)
+                        </tr>
+                    }
+                }
+            </table>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quotes)
+        </dt>
+
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Vehicle</th>
+                    <th>Annual Milage</th>
+                    <th>Zip Code</th>
+                    <th>Annual Premium</th>
+                </tr>
+                @if (Model.Quotes != null)
+                {
+                    foreach (var item in Model.Quotes)
+                    {
+                        <tr>
+                            @Html.DisplayFor(Model => item.Year) @Html.DisplayFor(Model => item.Make) @Html.DisplayFor(Model => item.Model)
+                        </tr>
+                        <tr>
+                            @Html.DisplayFor(Model => item.AnnualMilage)
+                        </tr>
+                        <tr>
+                            @Html.DisplayFor(Model => item.ZipCode)
+                        </tr>
+                        <tr>
+                            @Html.DisplayFor(Model => item.AnnualPremium)
+                        </tr>
                     }
                 }
             </table>
